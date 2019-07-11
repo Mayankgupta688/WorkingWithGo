@@ -1,6 +1,6 @@
 package main
 import "time"
-import "runtime"
+import "runtime" 
 
 func main() {
 	go alphabetGenerator()
