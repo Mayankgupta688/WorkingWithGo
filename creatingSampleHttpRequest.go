@@ -27,8 +27,8 @@ func main() {
 }
 
 type Employee struct {
-    Id   string `json:"id"`
-    Name    string    `json:"name"`
-	Avatar string `json:"avatar"`
-	CreatedAt time.Time `json:"createdAt"`
+    Id   		string `json:"id"`
+    Name    	string    `json:"name"`
+	Avatar 		string `json:"avatar"`
+	CreatedAt 	time.Time `json:"createdAt"`
 }
