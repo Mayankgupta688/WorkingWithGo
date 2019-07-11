@@ -5,26 +5,25 @@ import "io/ioutil"
 import "fmt"
 import "strconv"
 import "time"
-import "runtime"
 
 func main() {
 
-	runtime.GOMAXPROCS(8) 
-	
-	empList := []Employee{}
-	response, err := http.Get("http://5c055de56b84ee00137d25a0.mockapi.io/api/v1/employees")
-	if err == nil {
-		responseBody, readErr := ioutil.ReadAll(response.Body) 
-		if readErr == nil {
-			json.Unmarshal(responseBody, &empList)
+	for i := 1; i <= 10; i++ {
+		response, err := http.Get("http://5a530e1477e1d20012fa066a.mockapi.io/employeedata/" + strconv.Itoa(i))
+		if err == nil {
+			responseBody, readErr := ioutil.ReadAll(response.Body) 
+			
+			if readErr == nil {
+				fmt.Println(responseBody)
+				empList := new(Employee)
+				json.Unmarshal(responseBody, &empList)
 
-			for index, emp := range(empList) {
-				go fmt.Println("Value at " + strconv.Itoa(index) + " is " + emp.Name)
+				fmt.Println(empList.Id)
 			}
 		}
 	}
-
-	time.Sleep(1000 * time.Millisecond)
+ 
+	time.Sleep(10000 * time.Millisecond)
 }
 
 type Employee struct {
