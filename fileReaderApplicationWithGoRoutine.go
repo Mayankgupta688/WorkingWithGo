@@ -6,7 +6,7 @@ import(
 	"io/ioutil"
 )
 
-const watchedPath = "./source";
+const watchedPath = "./fileDropper";
 
 func main() {
 
