@@ -2,7 +2,7 @@ package main
 
 import "time"
 
-func main() {
+func simpleSequentialCodeGoRoutine() {
 	go func() {
 		println("Hello")
 	}()

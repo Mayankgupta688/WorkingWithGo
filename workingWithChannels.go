@@ -2,7 +2,7 @@ package main
 
 import "runtime"
 
-func main() {
+func workingWithChannels() {
 	runtime.GOMAXPROCS(8)
 	
 	ch := make(chan string)

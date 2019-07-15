@@ -1,9 +1,8 @@
 package main
 import "time"
-import "runtime" 
 
-func main() {
-	go alphabetGenerator()
+func workingWithRoutinesConcurrent() {
+	go alphabetGeneratorData()
 
 	// While the main function is kept to sleep, another Go Routine executes and then the function returns ..
 	
@@ -11,7 +10,7 @@ func main() {
 	println("Go Routine Executed..")
 }
 
-func alphabetGenerator() {
+func alphabetGeneratorData() {
 	for alpha := byte('a'); alpha <= byte('z'); alpha++ {
 		go println(string(alpha))
 	}

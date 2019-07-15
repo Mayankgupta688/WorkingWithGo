@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func workingWithoutMutex() {
 	runtime.GOMAXPROCS(8)
 
 	for i:=0; i<10; i++ {

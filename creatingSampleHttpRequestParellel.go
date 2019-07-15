@@ -7,7 +7,7 @@ import "strconv"
 import "time"
 import "runtime"
 
-func main() {
+func creatingSampleHttpRequestParellel() {
 
 	runtime.GOMAXPROCS(8) 
 
@@ -29,11 +29,4 @@ func main() {
 	}
 
 	time.Sleep(1000 * time.Millisecond)
-}
-
-type Employee struct {
-    Id   string `json:"id"`
-    Name    string    `json:"name"`
-	Avatar string `json:"avatar"`
-	CreatedAt time.Time `json:"createdAt"`
 }

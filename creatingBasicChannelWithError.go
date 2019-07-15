@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func creatingBasicChannelWithError() {
 
 	ch := make(chan string);
 

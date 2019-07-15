@@ -6,16 +6,17 @@ import(
 	"io/ioutil"
 )
 
-const watchedPath = "./fileDropper";
+const watchedPathData = "./fileDropper";
 
-func main() {
+func fileReaderApplicationWithGoRoutine() {
 
 	watcher, _ := os.Open(watchedPath)
 	files, _ := watcher.Readdir(-1)
+	fileData := ""
 
 	for _, file := range files {
-		func(file) {
-			filePath := watchedPath + "/" + file.Name()
+		func(fileData) {
+			filePath := watchedPathData + "/" + file.Name()
 			fileOpen, _ := os.Open(filePath)
 			fileData, _ := ioutil.ReadAll(fileOpen)
 			fileOpen.Close()

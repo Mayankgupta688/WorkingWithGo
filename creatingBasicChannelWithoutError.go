@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func creatingBasicChannelWithoutError() {
 
 
 	// Now this channel is created with a buffer.. which can hold 2 items..

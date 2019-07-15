@@ -1,7 +1,7 @@
 package main
 import "runtime"
 
-func main() {
+func workingWithRoutineParellelFurther() {
 
 	// If the parellel processing is removed.. it will not execute other Golang routines..
 

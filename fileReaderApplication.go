@@ -8,7 +8,7 @@ import(
 
 const watchedPath = "./source";
 
-func main() {
+func fileReaderApplication() {
 	for {
 		watcher, _ := os.Open(watchedPath)
 		files, _ := watcher.Readdir(-1)

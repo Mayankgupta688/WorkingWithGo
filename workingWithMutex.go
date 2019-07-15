@@ -7,7 +7,7 @@ import (
 	"sync"
 )
 
-func main() {
+func workingWithMutex() {
 	runtime.GOMAXPROCS(8)
 
 	mutex := new(sync.Mutex)
@@ -20,10 +20,10 @@ func main() {
 			// the next go routine is executed only when the previous goroutine unlocks the mutex..
 
 			mutex.Lock()
-			go func(i, j) {
+			go func() {
 				fmt.Println("i: " + strconv.Itoa(i) + " j: " + strconv.Itoa(j))
 				mutex.Unlock()
-			}(i, j)
+			}()
 		}
 	}
 

@@ -6,7 +6,7 @@ import "fmt"
 import "strconv"
 import "time"
 
-func main() {
+func creatingSampleHttpRequest() {
 
 	for i := 1; i <= 10; i++ {
 		response, err := http.Get("http://5a530e1477e1d20012fa066a.mockapi.io/employeedata/" + strconv.Itoa(i))
